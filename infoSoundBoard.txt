@@ -14,7 +14,11 @@ Find and collect JoulesSB source code, pictures and sound files.
     https://mail.google.com/mail/u/0/#search/joulessb/1348a036851e7763 notes about capturing video, pix and sound.
 
 Find a Python sound board program that uses kivy.
+    Google kivy soundboard; lots of GitHub projects.
 
+Evaluate https://github.com/yomguy/PiPlayer
+    PiPlayer : audio sample player for the Rpi
+    a minimalistic gstreamer based media sample player for the Raspberry Pi trigerred by GPIO or OSC callbacks.
 
 
 
