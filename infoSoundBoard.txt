@@ -1,0 +1,23 @@
+Overview
+A sound board inspired by JoulesSB. This one's kivy using and runs on Linux and Android.
+
+
+
+
+TODO
+Find and collect JoulesSB source code, pictures and sound files.
+    https://mail.google.com/mail/u/0/#search/soundboard/16015d19ecdb9588
+    http://daleemoore.mooreworks.org/andi/infoAndi.html
+    http://daleemoore.mooreworks.org/andi/JoulesSB.apk
+    http://daleemoore.mooreworks.org/~dalem/andi/
+    http://daleemoore.mooreworks.org/andi/
+    https://mail.google.com/mail/u/0/#search/joulessb/1348a036851e7763 notes about capturing video, pix and sound.
+
+Find a Python sound board program that uses kivy.
+
+
+
+
+Logs
+Friday 22 December 2017 2:57 PM CST
+Created
