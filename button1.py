@@ -3,6 +3,7 @@
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 from kivy.lang import Builder
+from kivy.uix.button import Button
 
 Builder.load_string("""
 <ButtonsApp>:
@@ -10,7 +11,7 @@ Builder.load_string("""
     Button:
         text: "B1"
         id: B1
-        on_press: root.callback()
+        on_press: root.callback(self)
         Image:
             # From: https://kivy.org/logos/kivy-logo-black-64.png
             source: 'kivy-logo-black-64.png'        
@@ -26,13 +27,18 @@ Builder.load_string("""
 """)
 
 class ButtonsApp(App, BoxLayout):
-    def build(self):
-
-        return self
-
-    def callback(instance):
+    def callback(self, instance):
         print('The button is being pressed.')
         #print('The button <%s> is being pressed' % instance.text)
+
+    def build(self):
+        print("ButtonsApp.build()")
+        print("Button " + str(self.ids["B1"].text))
+        self.add_widget(Button(text="B2"))
+        self.bind(on_press=lambda a: self.callback(self))
+        print("Button " + str(self.ids["B2"].text))
+        return self
+
 
 
 if __name__ == "__main__":
