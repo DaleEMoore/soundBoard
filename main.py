@@ -21,7 +21,13 @@ from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.stacklayout import StackLayout
+from kivy.uix.behaviors import ButtonBehavior
+from kivy.uix.image import Image
 
+class ImageButton(ButtonBehavior, Image):
+    def __init__(self, **kwargs):
+        super(ImageButton, self).__init__()
+        #super(ImageButton, self).__init__(**kwargs)
 
 class aScreen(GridLayout):
     def auth(self):
@@ -43,8 +49,12 @@ class aScreen(GridLayout):
 
     # but this doesn't work. What am I doing wrong?
 
-    def callback(self, instance, value):
-        print('My button <%s> state is <%s>' % (instance, value))
+    def callback(self, instance):
+    #    def callback(self, instance, value):
+        print('My button')
+        print('instance <%s>' % (instance))
+        #print('value <%s>' % (value))
+        #print('My button <%s> state is <%s>' % (instance, value))
 
     def __init__(self, **kwargs):
         super(aScreen, self).__init__(**kwargs)
@@ -63,11 +73,26 @@ class aScreen(GridLayout):
         # https://kivy.org/docs/api-kivy.uix.button.html
         # TODO; kivy show picture when button pushed
         # TODO; kivy play sound when button pressed
+        # https://kivy.org/docs/examples/gen__demo__pictures__main__py.html
+
 
         print("MyApp.build Button")
-        button1 = Button(text="Push button for picture and sound")
+        button1 = Button(text="Push button for picture and sound",
+                         on_press=lambda a: self.callback(self),
+                         )
+        #self.hello = Button(text="hello", on_press=lambda a: self.auth())
+        #button1 = Button(text="Push button for picture and sound", image="pearl.jpg")
+        # "/home/dalem/PycharmProjects/soundBoard/pearl.jpg"
+        # "/home/dalem/PycharmProjects/soundBoard/judyMomDale.jpg"
         #button1 = self.add_widget(Button(text="Push button for picture and sound"))
-        button1.bind(on_press=self.callback)
+        #button1.bind(on_press=self.callback)
+        self.add_widget(button1)
+
+        print("ImageButton")
+        button2 = ImageButton(text="elPush moi",
+                         on_press=lambda a: self.callback(self),
+                         )
+        self.add_widget(button2)
 
         print("MyApp.build Label")
         self.add_widget(Label(text='Hello world label'))
