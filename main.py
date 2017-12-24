@@ -27,7 +27,6 @@ class ImageButton(ButtonBehavior, Image):
 
 class aScreen(GridLayout):
 
-    # TODO; Calls to auth() fail with "TypeError: auth() takes 1 positional argument but 2 were given"
     def auth(self, instance):
         print("User: " + str(self.username.text))
         if self.username.text == "Hendricko":
