@@ -9,10 +9,6 @@ from kivy.app import App
 from kivy.uix.label import Label
 from kivy.uix.button import Button
 
-#I'm trying to bind the following function to a Button in Kivy.
-
-# here is my whole code
-
 from kivy.uix.popup import Popup
 from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
@@ -24,24 +20,25 @@ from kivy.uix.stacklayout import StackLayout
 
 
 class aScreen(GridLayout):
-    def auth(self):
-        print(self.username)
-        if self.username == "Hendricko":
-            print("self.username == Hendricko")
+
+    # TODO; Calls to auth() fail with "TypeError: auth() takes 1 positional argument but 2 were given"
+    def auth(self, instance):
+        print("User: " + str(self.username.text))
+        if self.username.text == "Hendricko":
+            print("self.username == " + str(self.username.text))
+            content = Button(text='Howdy! Close me!')
             popup = Popup(title="success",
-                          content=Label(text="Howdy !"),
+                          content=content,
                           size=(100, 100),
                           size_hint=(0.3, 0.3),
                           auto_dismiss=False)
+            content.bind(on_press=popup.dismiss)
             popup.open()
 
-    # I've tried
-
+    # I've tried, and failed:(
     class Foo():
         def initUI(self):
             self.add_widget(Button(text="Auth User and Password", on_press=self.auth))
-
-    # but this doesn't work. What am I doing wrong?
 
     def callback(self, instance, value):
         print('My button <%s> state is <%s>' % (instance, value))
@@ -50,7 +47,7 @@ class aScreen(GridLayout):
         super(aScreen, self).__init__(**kwargs)
         self.cols = 2
         self.row = 2
-        self.add_widget(Label(text='User Name'))
+        self.add_widget(Label(text='User Name (try Hendricko)'))
         self.username = TextInput(multiline=False)
         self.add_widget(self.username)
         self.add_widget(Label(text='password'))
