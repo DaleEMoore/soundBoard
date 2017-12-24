@@ -30,7 +30,8 @@ class ImageButton(ButtonBehavior, Image):
         #super(ImageButton, self).__init__(**kwargs)
 
 class aScreen(GridLayout):
-    def auth(self):
+    def auth(self, **kwargs):
+    #def auth(self):
         print(self.username)
         if self.username == "Hendricko":
             print("self.username == Hendricko")
@@ -45,6 +46,7 @@ class aScreen(GridLayout):
 
     class Foo():
         def initUI(self):
+            # TODO; TypeError: auth() takes 1 positional argument but 2 were given
             self.add_widget(Button(text="Auth User and Password", on_press=self.auth))
 
     # but this doesn't work. What am I doing wrong?
@@ -66,7 +68,9 @@ class aScreen(GridLayout):
         self.add_widget(Label(text='password'))
         self.password = TextInput(password=True, multiline=False)
         self.add_widget(self.password)
-        self.hello = Button(text="Push button for authorization", on_press=self.auth)
+        # TODO; TypeError: auth() takes 1 positional argument but 2 were given
+        self.hello = Button(text="Push button for authorization", on_press=lambda a: self.callback(self))
+        #self.hello = Button(text="Push button for authorization", on_press=self.auth(self,hi="hi",aloha="aloha"))
         self.add_widget(self.hello)
 
         # TODO: kivy button picture thumbnail
@@ -90,7 +94,15 @@ class aScreen(GridLayout):
 
         print("ImageButton")
         button2 = ImageButton(text="elPush moi",
-                         on_press=lambda a: self.callback(self),
+                              on_press=lambda a: self.callback(self),
+                              background_disabled_down="atlas://home/dalem/PycharmProjects/soundBoard/pearl.jpg",
+                              # 'atlas://data/images/defaulttheme/button_disabled_pressed'
+                              background_disabled_normal="atlas://home/dalem/PycharmProjects/soundBoard/pearl.jpg",
+                              background_down="atlas://home/dalem/PycharmProjects/soundBoard/pearl.jpg",
+                              background_normal="atlas://home/dalem/PycharmProjects/soundBoard/pearl.jpg",
+                              # /usr/lib/python3/dist-packages/kivy/data/images/defaulttheme-0.png
+                              # /usr/lib/python3/dist-packages/kivy/data/images/defaulttheme.atlas
+                              #imagesource="/home/dalem/PycharmProjects/soundBoard/pearl.jpg"
                          )
         self.add_widget(button2)
 
