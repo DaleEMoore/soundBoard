@@ -9,6 +9,8 @@ Builder.load_string("""
     orientation: "vertical"
     Button:
         text: "B1"
+        id: B1
+        on_press: root.callback()
         Image:
             # From: https://kivy.org/logos/kivy-logo-black-64.png
             source: 'kivy-logo-black-64.png'        
@@ -25,7 +27,13 @@ Builder.load_string("""
 
 class ButtonsApp(App, BoxLayout):
     def build(self):
+
         return self
+
+    def callback(instance):
+        print('The button is being pressed.')
+        #print('The button <%s> is being pressed' % instance.text)
+
 
 if __name__ == "__main__":
     ButtonsApp().run()
