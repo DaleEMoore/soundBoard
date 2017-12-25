@@ -1,0 +1,113 @@
+<div style="border-top-style:solid; border-top-width:2px; border-top-color:#72B0E6; padding-top:1px;
+         border-left-style:solid; border-left-width:2px; border-left-color:#72B0E6; padding-left:1px;">
+<div style="border-top-style:solid; border-top-width:1px; border-top-color:#72B0E6; padding-top:10px;
+         border-left-style:solid; border-left-width:1px; border-left-color:#72B0E6; padding-left:10px;">
+
+<script type = "text/javascript">
+// From http://www.willmaster.com/library/features/tooltip-flyover-help.php
+// Tip Box Display, version 1.0
+// Bontrager Connection, LLC
+// http://www.willmaster.com/
+// -> Functions findPosX and findPosY by 
+//    Peter-Paul Koch & Alex Tingle at 
+//    http://www.quirksmode.org/js/findpos.html and 
+//    http://blog.firetree.net/2005/07/04/javascript-find-position/
+//
+// One customization:
+//
+// Specify the ID of the DIV or other container that is the tip box.
+
+var TipBoxID = "TipBox";
+
+// No other customizations required
+// // // // // // // // // // // //
+
+var tip_box_id;
+
+function findPosX(obj)
+{
+   var curleft = 0;
+   if(obj.offsetParent)
+   while(1) 
+   {
+      curleft += obj.offsetLeft;
+      if(!obj.offsetParent)
+         break;
+      obj = obj.offsetParent;
+   }
+   else if(obj.x)
+      curleft += obj.x;
+   return curleft;
+}
+
+function findPosY(obj)
+{
+   var curtop = 0;
+   if(obj.offsetParent)
+   while(1)
+   {
+      curtop += obj.offsetTop;
+      if(!obj.offsetParent)
+         break;
+      obj = obj.offsetParent;
+   }
+   else if(obj.y)
+      curtop += obj.y;
+   return curtop;
+}
+
+function DisplayTip(me,offX,offY,content) {
+   var tipO = me;
+   tip_box_id = document.getElementById(TipBoxID);
+   var x = findPosX(me);
+   var y = findPosY(me);
+   tip_box_id.style.left = String(parseInt(x + offX) + 'px');
+   tip_box_id.style.top = String(parseInt(y + offY) + 'px');
+   tip_box_id.innerHTML = content;
+   tip_box_id.style.display = "block";
+   tipO.onmouseout = HideTip;
+} // function DisplayTip()
+
+function HideTip() { tip_box_id.style.display = "none"; }
+</script>
+
+<div 
+   id="TipBox" 
+   style="
+      display:none;
+      position:absolute; 
+      font-size:12px;
+      font-weight:bold;
+      font-family:verdana;
+      border:#72B0E6 solid 1px;
+      padding:15px;
+      color:#1A80DB;
+      background-color:#FFFFFF;">
+</div>
+
+<p style="margin-top:0;">
+Image, form labels, form button, and div content all have tool tips.
+</p>
+
+<img onmouseover="DisplayTip(this,55,0,'Willmaster.com logo image.')" src="http://www.willmaster.com/08images/wmlogo_icon.gif" width="50" height="50" border="0" alt="image :)">
+
+<form>
+<p>
+<span onmouseover="DisplayTip(this,25,-50,'Your full name, please.')">Name:</span> 
+<input type="text" size="22">
+</p>
+<p>
+<span onmouseover="DisplayTip(this,25,-50,'Double check!')">Email:</span> 
+<input type="text" size="22">
+</p>
+<p>
+<input type="button" onmouseover="DisplayTip(this,0,30,'Please verify your information.')" value="Click" onclick="alert('E X A M P L E')"> 
+</p>
+</form>
+
+<div style="border-style:dotted;border-color:black;border-width:1px;" onmouseover="DisplayTip(this,-65,-85,'<img src=\'http://www.willmaster.com/08images/wmlogo_icon.gif\' width=\'50\' height=\'50\' border=\'0\'>')">[div content goes here]</div>
+
+<div style="height:10px;font-size:1px;line-height:1px;"> </div>
+
+</div><!-- example inside border -->
+</div><!-- example outside border -->

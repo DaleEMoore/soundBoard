@@ -1,0 +1,172 @@
+<!DOCTYPE HTML>
+<!--
+	TODO;
+	    Joey mentioned "when you click an image the first time, it does a
+			sort of reload and takes you to the top of the page.  Further image
+			clicks do not do this.  Perhaps it is taking you to "#" instead of
+			where it starts ""?"
+	    add video.
+	    make buttons with images on them to improve appearance?
+	    load audio/video/media on first occurence and never again?
+	    add objects to HTML at runtime from XML downloaded?
+	DONE;
+	   	add PopopTaoFriday and pix.
+		"there is a problem parsing the package." probably because of the target Android version.
+			Change project properties android build target to 2.2.
+		Cleanup display a little. 
+-->
+<html>
+<head>
+	<title>Joules Sound Board</title>
+	<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+	<script type="text/javascript" charset="utf-8">
+    platform="unrecognized";
+    // Wait for PhoneGap to load
+    document.addEventListener("deviceready", onDeviceReady, false); // Device will go ready in PhoneGap
+	setTimeout(onDeviceReady, 500);									// Timeout occurs even in website
+    // PhoneGap is ready
+    function onDeviceReady() {
+        var element = document.getElementById('deviceProperties');
+        var element1 = document.getElementById('deviceProperties1');
+        var element2 = document.getElementById('deviceProperties2');
+
+		if (typeof device === "undefined") {
+			platform="website";
+	        element.innerHTML = 'Device is website.<br />';
+	        //element1.innerHTML = 'Device is website.<br />';
+	    }else{
+			platform="android";
+	        element.innerHTML = 'Device Name: '     + device.name     + '<br />' + 
+	                            'Device PhoneGap: ' + device.phonegap + '<br />' + 
+	                            'Device Platform: ' + device.platform + '<br />' + 
+	                            'Device UUID: '     + device.uuid     + '<br />' + 
+	                            'Device Version: '  + device.version  + '<br />';
+	                            /*
+	        element2.innerHTML = 'Device Name: '     + device.name     + '<br />' + 
+	                            'Device PhoneGap: ' + device.phonegap + '<br />' + 
+	                            'Device Platform: ' + device.platform + '<br />' + 
+	                            'Device UUID: '     + device.uuid     + '<br />' + 
+	                            'Device Version: '  + device.version  + '<br />';
+	                            */
+		}
+    }
+    </script>
+</head>
+<body>
+<script type="text/javascript" charset="utf-8" src="main.js"></script>
+
+<h2>Joules Sound Board</h2>
+Tap an image to be mystified.
+<br/>
+
+<a href="#" onClick="return audioPlay('http://DaleEMoore.MooreWorks.Org/~dalem/JoulesSB/BabyHeartbeat.wav')">
+<img id="jsbutton0"
+onMouseOver="DisplayTip(this,0,0,'BabyHeartbeat')"
+src="http://DaleEMoore.MooreWorks.Org/~dalem/JoulesSB/BabyHeartbeat.jpg"
+border="0"
+alt="jsbutton0">
+</a>
+
+<a href="#" onClick="return audioPlay('http://DaleEMoore.MooreWorks.Org/~dalem/JoulesSB/friday.wav')">
+<img id="jsbutton0a"
+onMouseOver="DisplayTip(this,0,0,'friday')"
+src="http://DaleEMoore.MooreWorks.Org/~dalem/JoulesSB/friday.jpg"
+border="0"
+alt="jsbutton0a">
+</a>
+
+<a href="#" onClick="return audioPlay('http://DaleEMoore.MooreWorks.Org/~dalem/JoulesSB/BabySister.wav')">
+<img id="jsbutton1"
+onMouseOver="DisplayTip(this,0,0,'BabySister')"
+src="http://DaleEMoore.MooreWorks.Org/~dalem/JoulesSB/BabySister.jpg"
+border="0"
+alt="jsbutton1">
+</a>
+
+<a href="#" onClick="return audioPlay('http://DaleEMoore.MooreWorks.Org/~dalem/JoulesSB/buzzlightyearinfinitybeyond.wav')">
+<img id="jsbutton2"
+onMouseOver="DisplayTip(this,0,0,'buzzlightyearinfinitybeyond')"
+src="http://DaleEMoore.MooreWorks.Org/~dalem/JoulesSB/buzzlightyearinfinitybeyond.jpg"
+border="0"
+alt="jsbutton2">
+</a>
+
+<a href="#" onClick="return audioPlay('http://DaleEMoore.MooreWorks.Org/~dalem/JoulesSB/fossilMuseum.wav')">
+<img id="jsbutton3"
+onMouseOver="DisplayTip(this,0,0,'fossilMuseum')"
+src="http://DaleEMoore.MooreWorks.Org/~dalem/JoulesSB/fossilMuseum.jpg"
+border="0"
+alt="jsbutton3">
+</a>
+
+<a href="#" onClick="return audioPlay('http://DaleEMoore.MooreWorks.Org/~dalem/JoulesSB/helicopter.wav')">
+<img id="jsbutton4"
+onMouseOver="DisplayTip(this,0,0,'helicopter')"
+src="http://DaleEMoore.MooreWorks.Org/~dalem/JoulesSB/helicopter.jpg"
+border="0"
+alt="jsbutton4">
+</a>
+
+<a href="#" onClick="return audioPlay('http://DaleEMoore.MooreWorks.Org/~dalem/JoulesSB/JoulesLaugh.wav')">
+<img id="jsbutton5"
+onMouseOver="DisplayTip(this,0,0,'JoulesLaugh')"
+src="http://DaleEMoore.MooreWorks.Org/~dalem/JoulesSB/JoulesLaugh.jpg"
+border="0"
+alt="jsbutton5">
+</a>
+
+<a href="#" onClick="return audioPlay('http://DaleEMoore.MooreWorks.Org/~dalem/JoulesSB/mytubeGood.wav')">
+<img id="jsbutton6"
+onMouseOver="DisplayTip(this,0,0,'mytubeGood')"
+src="http://DaleEMoore.MooreWorks.Org/~dalem/JoulesSB/mytubeGood.jpg"
+border="0"
+alt="jsbutton6">
+</a>
+
+<a href="#" onClick="return audioPlay('http://DaleEMoore.MooreWorks.Org/~dalem/JoulesSB/Share.wav')">
+<img id="jsbutton7"
+onMouseOver="DisplayTip(this,0,0,'Share')"
+src="http://DaleEMoore.MooreWorks.Org/~dalem/JoulesSB/Share.jpg"
+border="0"
+alt="jsbutton7">
+</a>
+
+<a href="#" onClick="return audioPlay('http://DaleEMoore.MooreWorks.Org/~dalem/JoulesSB/TeslaBottle.wav')">
+<img id="jsbutton8"
+onMouseOver="DisplayTip(this,0,0,'TeslaBottle')"
+src="http://DaleEMoore.MooreWorks.Org/~dalem/JoulesSB/TeslaBottle.jpg"
+border="0"
+alt="jsbutton8">
+</a>
+
+<a href="#" onClick="return audioPlay('http://DaleEMoore.MooreWorks.Org/~dalem/JoulesSB/TeslaFroggie2.wav')">
+<img id="jsbutton9"
+onMouseOver="DisplayTip(this,0,0,'TeslaFroggie2')"
+src="http://DaleEMoore.MooreWorks.Org/~dalem/JoulesSB/TeslaFroggie2.jpg"
+border="0"
+alt="jsbutton9">
+</a>
+
+<br/>
+Tap <a href="http://DaleEMoore.MooreWorks.Org/andi/infoAndi.html">here</a> to install to your Android device.
+<audio id="audio1" controls preload="auto" autobuffer 
+	src="http://DaleEMoore.MooreWorks.Org/~dalem/JoulesSB/helicopter.jpg">
+</audio>
+<p id="deviceProperties">Loading device properties...</p>
+<p id="deviceProperties1"></p>
+<p id="deviceProperties2"></p>
+<div 
+   id="TipBox" 
+   style="
+      display:none;
+      position:absolute; 
+      font-size:8px;
+      font-weight:bold;
+      font-family:verdana;
+      border:#72B0E6 solid 1px;
+      padding:5px;
+      color:#1A80DB;
+      background-color:#FFFFFF;">
+</div>
+</body>
+</html>
