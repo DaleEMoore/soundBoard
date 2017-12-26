@@ -5,7 +5,7 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.lang import Builder
 from kivy.uix.button import Button
 
-Builder.load_string("""
+built = Builder.load_string("""
 <ButtonsApp>:
     orientation: "vertical"
     Button:
@@ -34,12 +34,16 @@ class ButtonsApp(App, BoxLayout):
     def build(self):
         print("ButtonsApp.build()")
         print("Button " + str(self.ids["B1"].text))
-        self.add_widget(Button(text="B2"))
+        self.add_widget(Button(text="B2",id="B2"))
         self.bind(on_press=lambda a: self.callback(self))
-        print("Button " + str(self.ids["B2"].text))
+        # TODO; add_widget did not put B2 in ids.
+        # KeyError: 'B2'
+        #print("Button " + str(self.ids["B2"].text))
         return self
 
 
 
 if __name__ == "__main__":
-    ButtonsApp().run()
+    print ("built: " + str(built))
+    root_widget = ButtonsApp().run()
+    print ("root_widget: " + str(root_widget))
