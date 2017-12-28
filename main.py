@@ -107,14 +107,26 @@ class aScreen(GridLayout):
         # TODO; Try https://stackoverflow.com/questions/26821651/kivy-how-to-make-an-image-act-like-a-button
         # TODO; https://kivy.org/docs/api-kivy.atlas.html for PNG instead of JPG?
         button2 = ImageButton(text="elPushy moi",
-                              background_disabled_down=StringProperty(
-"atlas://home/dalem/PycharmProjects/soundBoard/daleemoore.mooreworks.org/JoulesSB/friday.png"),
-                              background_disabled_normal=StringProperty(
-"atlas://home/dalem/PycharmProjects/soundBoard/daleemoore.mooreworks.org/JoulesSB/fosselMuseum.png"),
-                              background_down=StringProperty(
-"atlas://home/dalem/PycharmProjects/soundBoard/daleemoore.mooreworks.org/JoulesSB/TeslaBottle.png"),
                               background_normal=StringProperty(
-"atlas://home/dalem/PycharmProjects/soundBoard/daleemoore.mooreworks.org/JoulesSB/BabyHeartbeat.png"),
+"daleemoore.mooreworks.org/JoulesSB/BabyHeartbeat.png"),
+                              #"/home/dalem/PycharmProjects/soundBoard/daleemoore.mooreworks.org/JoulesSB/BabyHeartbeat.png"),
+
+        #background_disabled_down=StringProperty(
+                              #    "/home/dalem/PycharmProjects/soundBoard/daleemoore.mooreworks.org/JoulesSB/friday.png"),
+                              #background_disabled_normal=StringProperty(
+                              #    "/home/dalem/PycharmProjects/soundBoard/daleemoore.mooreworks.org/JoulesSB/fossilMuseum.png"),
+                              #background_down=StringProperty(
+                              #    "/home/dalem/PycharmProjects/soundBoard/daleemoore.mooreworks.org/JoulesSB/TeslaBottle.png"),
+
+                              #background_disabled_down=StringProperty(
+                              #    "atlas://home/dalem/PycharmProjects/soundBoard/daleemoore.mooreworks.org/JoulesSB/friday.png"),
+                              #background_disabled_normal=StringProperty(
+                              #    "atlas://home/dalem/PycharmProjects/soundBoard/daleemoore.mooreworks.org/JoulesSB/fosselMuseum.png"),
+                              #background_down=StringProperty(
+                              #    "atlas://home/dalem/PycharmProjects/soundBoard/daleemoore.mooreworks.org/JoulesSB/TeslaBottle.png"),
+                              #background_normal=StringProperty(
+                              #    "atlas://home/dalem/PycharmProjects/soundBoard/daleemoore.mooreworks.org/JoulesSB/BabyHeartbeat.png"),
+
                               #background_disabled_down="atlas://home/dalem/PycharmProjects/soundBoard/pearl.jpg",
                               #background_disabled_normal="atlas://home/dalem/PycharmProjects/soundBoard/pearl.jpg",
                               #background_down="atlas://home/dalem/PycharmProjects/soundBoard/pearl.jpg",
