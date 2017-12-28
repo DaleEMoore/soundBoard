@@ -11,6 +11,7 @@ from kivy.uix.button import Button
 
 from kivy.uix.popup import Popup
 from kivy.app import App
+from kivy.properties import StringProperty
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.label import Label
 from kivy.uix.textinput import TextInput
@@ -20,17 +21,21 @@ from kivy.uix.stacklayout import StackLayout
 from kivy.uix.behaviors import ButtonBehavior
 from kivy.uix.image import Image
 
+# From: https://stackoverflow.com/questions/33489143/kivy-image-as-button
 class ImageButton(ButtonBehavior, Image):
     def __init__(self, **kwargs):
         super(ImageButton, self).__init__()
         #super(ImageButton, self).__init__(**kwargs)
+
+    def on_press(self):
+        print ('%s pressed' % str(self))
+        pass
 
 class aScreen(GridLayout):
 
     def auth(self, instance):
         print("User: " + str(self.username.text))
         if self.username.text == "Hendricko":
-            print("self.username == " + str(self.username.text))
             content = Button(text='Howdy! Close me!')
             popup = Popup(title="success",
                           content=content,
@@ -39,6 +44,16 @@ class aScreen(GridLayout):
                           auto_dismiss=False)
             content.bind(on_press=popup.dismiss)
             popup.open()
+        else:
+            content = Button(text='Sorry, nope! Close me!')
+            popup = Popup(title="failure",
+                          content=content,
+                          size=(100, 100),
+                          size_hint=(0.3, 0.3),
+                          auto_dismiss=False)
+            content.bind(on_press=popup.dismiss)
+            popup.open()
+
 
     # I've tried, and failed:(
     class Foo():
@@ -89,17 +104,29 @@ class aScreen(GridLayout):
         self.add_widget(button1)
 
         print("ImageButton")
+        # TODO; Try https://stackoverflow.com/questions/26821651/kivy-how-to-make-an-image-act-like-a-button
+        # TODO; https://kivy.org/docs/api-kivy.atlas.html for PNG instead of JPG?
         button2 = ImageButton(text="elPushy moi",
-                              on_press=lambda a: self.callback(self),
-                              background_disabled_down="atlas://home/dalem/PycharmProjects/soundBoard/pearl.jpg",
+                              background_disabled_down=StringProperty(
+"atlas://home/dalem/PycharmProjects/soundBoard/daleemoore.mooreworks.org/JoulesSB/friday.png"),
+                              background_disabled_normal=StringProperty(
+"atlas://home/dalem/PycharmProjects/soundBoard/daleemoore.mooreworks.org/JoulesSB/fosselMuseum.png"),
+                              background_down=StringProperty(
+"atlas://home/dalem/PycharmProjects/soundBoard/daleemoore.mooreworks.org/JoulesSB/TeslaBottle.png"),
+                              background_normal=StringProperty(
+"atlas://home/dalem/PycharmProjects/soundBoard/daleemoore.mooreworks.org/JoulesSB/BabyHeartbeat.png"),
+                              #background_disabled_down="atlas://home/dalem/PycharmProjects/soundBoard/pearl.jpg",
+                              #background_disabled_normal="atlas://home/dalem/PycharmProjects/soundBoard/pearl.jpg",
+                              #background_down="atlas://home/dalem/PycharmProjects/soundBoard/pearl.jpg",
+                              #background_normal="atlas://home/dalem/PycharmProjects/soundBoard/pearl.jpg",
                               # 'atlas://data/images/defaulttheme/button_disabled_pressed'
-                              background_disabled_normal="atlas://home/dalem/PycharmProjects/soundBoard/pearl.jpg",
-                              background_down="atlas://home/dalem/PycharmProjects/soundBoard/pearl.jpg",
-                              background_normal="atlas://home/dalem/PycharmProjects/soundBoard/pearl.jpg",
                               # /usr/lib/python3/dist-packages/kivy/data/images/defaulttheme-0.png
                               # /usr/lib/python3/dist-packages/kivy/data/images/defaulttheme.atlas
                               #imagesource="/home/dalem/PycharmProjects/soundBoard/pearl.jpg"
-                         )
+
+                              # Doesn't work... Might be because it's included in another widget?
+                              #on_press=lambda a: self.callback(self),
+                              )
         self.add_widget(button2)
 
         print("MyApp.build Label")
