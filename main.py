@@ -61,7 +61,7 @@ class aScreen(GridLayout):
         self.cols = 2
         self.row = 2
         self.add_widget(Label(text='User Name (try Hendricko)'))
-        self.username = TextInput(multiline=False)
+        self.username = TextInput(multiline=False, text="Hendricko")
         self.add_widget(self.username)
         self.add_widget(Label(text='password'))
         self.password = TextInput(password=True, multiline=False)
@@ -89,7 +89,7 @@ class aScreen(GridLayout):
         self.add_widget(button1)
 
         print("ImageButton")
-        button2 = ImageButton(text="elPush moi",
+        button2 = ImageButton(text="elPushy moi",
                               on_press=lambda a: self.callback(self),
                               background_disabled_down="atlas://home/dalem/PycharmProjects/soundBoard/pearl.jpg",
                               # 'atlas://data/images/defaulttheme/button_disabled_pressed'
