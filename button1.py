@@ -11,7 +11,7 @@ built = Builder.load_string("""
     Button:
         text: "B1"
         id: B1
-        on_press: root.callback(self)
+        on_press: root.callback(self, "B1")
         Image:
             # From: https://kivy.org/logos/kivy-logo-black-64.png
             source: 'kivy-logo-black-64.png'        
@@ -27,18 +27,26 @@ built = Builder.load_string("""
 """)
 
 class ButtonsApp(App, BoxLayout):
-    def callback(self, instance):
-        print('The button is being pressed.')
+    def callback(self, instance, value):
+        #print("Button pushed instance")
+        print('The button %s instance.' % str(instance.text))
+        #print("value")
+        print('The button %s value.' % str(value))
         #print('The button <%s> is being pressed' % instance.text)
 
     def build(self):
         print("ButtonsApp.build()")
         print("Button " + str(self.ids["B1"].text))
+
+        # TODO; B2 and B3 don't press?
         self.add_widget(Button(text="B2",id="B2"))
-        self.bind(on_press=lambda a: self.callback(self))
+        self.bind(on_press=lambda a: self.callback(self, "B2"))
         # TODO; add_widget did not put B2 in ids.
         # KeyError: 'B2'
         #print("Button " + str(self.ids["B2"].text))
+        self.add_widget(Button(text="B3",id="B3"))
+        self.bind(on_press=lambda a: self.callback(self, "B3"))
+        #print("Button " + str(self.ids["B3"].text))
         return self
 
 

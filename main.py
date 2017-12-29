@@ -104,11 +104,21 @@ class aScreen(GridLayout):
         self.add_widget(button1)
 
         print("ImageButton")
-        # TODO; Try https://stackoverflow.com/questions/26821651/kivy-how-to-make-an-image-act-like-a-button
-        # TODO; https://kivy.org/docs/api-kivy.atlas.html for PNG instead of JPG?
+        # Try https://stackoverflow.com/questions/26821651/kivy-how-to-make-an-image-act-like-a-button
+        # https://kivy.org/docs/api-kivy.atlas.html for PNG instead of JPG?
+        # TODO; Google "make a png for kivy button"
+        # TODO; https://groups.google.com/forum/#!topic/kivy-users/tBZH1dJyz3M
+        png2 = StringProperty("daleemoore.mooreworks.org/JoulesSB/BabyHeartbeat.png")
+        #png2 = StringProperty("daleemoore.mooreworks.org/JoulesSB/BabyHeartbeat.png")
         button2 = ImageButton(text="elPushy moi",
-                              background_normal=StringProperty(
-"daleemoore.mooreworks.org/JoulesSB/BabyHeartbeat.png"),
+                              background_normal=png2,
+                              background_disabled_down=png2,
+                              background_disabled_normal=png2,
+                              background_down=png2,
+
+                              # background_normal=StringProperty(
+                              #    "atlas://home/dalem/PycharmProjects/soundBoard/daleemoore.mooreworks.org/JoulesSB/BabyHeartbeat.png"),
+
                               #"/home/dalem/PycharmProjects/soundBoard/daleemoore.mooreworks.org/JoulesSB/BabyHeartbeat.png"),
 
         #background_disabled_down=StringProperty(
