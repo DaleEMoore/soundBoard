@@ -5,6 +5,16 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.lang import Builder
 from kivy.uix.button import Button
 
+# Worked
+# friday.png
+# fossilMuseum.png
+# TeslaBottle.png
+# source: 'daleemoore.mooreworks.org/JoulesSB/BabyHeartbeat.png'
+
+# Worked
+# source: 'kivy-logo-black-64.png'
+# From: https://kivy.org/logos/kivy-logo-black-64.png
+
 built = Builder.load_string("""
 <ButtonsApp>:
     orientation: "vertical"
@@ -13,8 +23,7 @@ built = Builder.load_string("""
         id: B1
         on_press: root.callback(self, "B1")
         Image:
-            # From: https://kivy.org/logos/kivy-logo-black-64.png
-            source: 'kivy-logo-black-64.png'        
+            source: 'daleemoore.mooreworks.org/JoulesSB/friday.png'        
             #source: 'kivy.png'
             y: self.parent.y + self.parent.height - 250
             x: self.parent.x
@@ -34,6 +43,10 @@ class ButtonsApp(App, BoxLayout):
         print('The button %s value.' % str(value))
         #print('The button <%s> is being pressed' % instance.text)
 
+    def on_press(self):
+        print ('%s pressed' % str(self))
+        pass
+
     def build(self):
         print("ButtonsApp.build()")
         print("Button " + str(self.ids["B1"].text))
@@ -48,7 +61,6 @@ class ButtonsApp(App, BoxLayout):
         self.bind(on_press=lambda a: self.callback(self, "B3"))
         #print("Button " + str(self.ids["B3"].text))
         return self
-
 
 
 if __name__ == "__main__":

@@ -104,11 +104,15 @@ class aScreen(GridLayout):
         self.add_widget(button1)
 
         print("ImageButton")
+
         # Try https://stackoverflow.com/questions/26821651/kivy-how-to-make-an-image-act-like-a-button
         # https://kivy.org/docs/api-kivy.atlas.html for PNG instead of JPG?
         # TODO; Google "make a png for kivy button"
         # TODO; https://groups.google.com/forum/#!topic/kivy-users/tBZH1dJyz3M
-        png2 = StringProperty("daleemoore.mooreworks.org/JoulesSB/BabyHeartbeat.png")
+
+        # This, kivy-logo-black-64.png, works in button1.py.
+        # All these PNGs work in button1.py. Something else is wrong here.
+        png2 = StringProperty("kivy-logo-black-64.png")
         #png2 = StringProperty("daleemoore.mooreworks.org/JoulesSB/BabyHeartbeat.png")
         button2 = ImageButton(text="elPushy moi",
                               background_normal=png2,
