@@ -3,6 +3,7 @@
 # Sound Board
 
 import kivy
+print("kivy version " + str(kivy.__version__))
 kivy.require('1.0.6') # replace with your current kivy version !
 
 from kivy.app import App
@@ -112,8 +113,8 @@ class aScreen(GridLayout):
 
         # This, kivy-logo-black-64.png, works in button1.py.
         # All these PNGs work in button1.py. Something else is wrong here.
-        png2 = StringProperty("kivy-logo-black-64.png")
-        #png2 = StringProperty("daleemoore.mooreworks.org/JoulesSB/BabyHeartbeat.png")
+        png2 = StringProperty("daleemoore.mooreworks.org/JoulesSB/BabyHeartbeat.png")
+        #png2 = StringProperty("kivy-logo-black-64.png")
         button2 = ImageButton(text="elPushy moi",
                               background_normal=png2,
                               background_disabled_down=png2,
@@ -157,6 +158,8 @@ class aScreen(GridLayout):
 
         print("MyApp.build Label")
         self.add_widget(Label(text='Hello world label'))
+        self.add_widget(Label(text='next Hello world label'))
+        self.add_widget(Label(text='3rd Hello world label'))
         print("build done")
 
 
