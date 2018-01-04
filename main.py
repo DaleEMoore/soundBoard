@@ -91,7 +91,6 @@ class aScreen(GridLayout):
         # TODO; kivy play sound when button pressed
         # https://kivy.org/docs/examples/gen__demo__pictures__main__py.html
 
-
         print("MyApp.build Button")
         button1 = Button(text="Push button for picture and sound",
                          on_press=lambda a: self.callback(self),
