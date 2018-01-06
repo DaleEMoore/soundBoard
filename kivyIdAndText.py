@@ -57,7 +57,9 @@ class ExampleApp(App):
         instance.parent.ids.ltext.text = "Text:" + instance.text
         try:
             # TODO; getting TypeError in "instance.parent.ids(self.get_id(instance)".
-            instance.parent.ids.lcomment.text = "Comment: id contains:" + instance.parent.ids(self.get_id(instance))
+            inst3 = self.get_id(instance)
+            inst4 = instance.parent.ids[inst3]
+            instance.parent.ids.lcomment.text = "Comment: id contains:" + inst4
         except:
             instance.parent.ids.lcomment.text = "Comment: error " + str(sys.exc_info()[0])
     def get_id(self,  instance):
