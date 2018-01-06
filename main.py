@@ -2,6 +2,8 @@
 
 # Sound Board
 
+print("The start of everything.")
+
 import kivy
 print("kivy version " + str(kivy.__version__))
 kivy.require('1.0.6') # replace with your current kivy version !

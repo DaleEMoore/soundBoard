@@ -5,16 +5,8 @@ A sound board inspired by JoulesSB. This one's kivy using and runs on Linux and 
 
 
 TODO
-Find and collect JoulesSB source code, pictures and sound files.
-    https://mail.google.com/mail/u/0/#search/soundboard/16015d19ecdb9588
-    http://daleemoore.mooreworks.org/andi/infoAndi.html
-    http://daleemoore.mooreworks.org/andi/JoulesSB.apk
-    http://daleemoore.mooreworks.org/~dalem/andi/
-    http://daleemoore.mooreworks.org/andi/
-    https://mail.google.com/mail/u/0/#search/joulessb/1348a036851e7763 notes about capturing video, pix and sound.
-
-Find a Python sound board program that uses kivy.
-    Google kivy soundboard; lots of GitHub projects.
+Get ImageButton working to my satisfaction.
+    Build string first then "built = Builder.load_string(toBuild)".
 
 Evaluate https://github.com/yomguy/PiPlayer
     PiPlayer : audio sample player for the Rpi
@@ -25,3 +17,19 @@ Evaluate https://github.com/yomguy/PiPlayer
 Logs
 Friday 22 December 2017 2:57 PM CST
 Created
+
+
+Saturday 6 January 2018 11:35 AM CST
+Sometime before this datetime...
+Find and collect JoulesSB source code, pictures and sound files.
+    https://mail.google.com/mail/u/0/#search/soundboard/16015d19ecdb9588
+    http://daleemoore.mooreworks.org/andi/infoAndi.html
+    http://daleemoore.mooreworks.org/andi/JoulesSB.apk
+    http://daleemoore.mooreworks.org/~dalem/andi/
+    http://daleemoore.mooreworks.org/andi/
+    https://mail.google.com/mail/u/0/#search/joulessb/1348a036851e7763 notes about capturing video, pix and sound.
+
+Find a Python sound board program that uses kivy.
+    Google kivy soundboard; lots of GitHub projects.
+    Am using some code I found that uses "class ImageButton".
+
