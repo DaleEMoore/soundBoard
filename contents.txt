@@ -1,0 +1,10 @@
+
+The contents of this project.
+
+button1.py       - 3 buttons, top works - other 2 do nothing.
+kivyIdAndText.py - Read data show id, object, text.
+kivyString1.py   - 3 buttons, top works - other 2 do nothing.
+main.py          - password, authorization, lots of buttons/labels do nothing.
+make1.py         - somebody's simple sound-board with RPi.GPIO
+Reddit1.py       - somebody's simple sound-board with winsound
+

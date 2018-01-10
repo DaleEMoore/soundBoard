@@ -7,3 +7,4 @@ kivy
 # Tkinter
 # import Tkinter    # Reddit1.py
 # import winsound   # Reddit1.py
+# apt install python-tk

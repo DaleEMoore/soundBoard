@@ -5,6 +5,8 @@ from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 from kivy.lang import Builder
 from kivy.uix.button import Button
+from kivy.core.audio import SoundLoader
+import time
 
 # Worked
 # friday.png
@@ -16,6 +18,7 @@ from kivy.uix.button import Button
 # source: 'kivy-logo-black-64.png'
 # From: https://kivy.org/logos/kivy-logo-black-64.png
 
+# TODO; setup another button with a different picture and sound.
 built = Builder.load_string("""
 <ButtonsApp>:
     orientation: "vertical"
@@ -43,10 +46,26 @@ class ButtonsApp(App, BoxLayout):
         #print("value")
         print('The button %s value.' % str(value))
         #print('The button <%s> is being pressed' % instance.text)
+        print ('start sound')
+        sound = SoundLoader.load('daleemoore.mooreworks.org/JoulesSB/friday.mp3')
+        if sound:
+            print("Sound found at %s" % sound.source)
+            print("Sound is %.3f seconds" % sound.length)
+            sound.play()
+            # wait until the sound is done playing to free up the interface
+            # Well it doesn't really freeze, you can push the same button and buffer up several plays.
+            print('start waiting for sound to finish')
+            time.sleep(sound.length)
+            print ('sound done.')
+        else:
+            print("No sound.")
+        #sound = SoundLoader.load('beep.wav')
+        #AttributeError: 'NoneType' object has no attribute 'play'
+        #sound.play()
+
 
     def on_press(self):
         print ('%s pressed' % str(self))
-        pass
 
     def build(self):
         print("ButtonsApp.build()")
