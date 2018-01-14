@@ -12,7 +12,7 @@ import time
 # friday.png
 # fossilMuseum.png
 # TeslaBottle.png
-# source: 'daleemoore.mooreworks.org/JoulesSB/BabyHeartbeat.png'
+# source: 'daleemoore.mooreworks.org/JoulesSB/BabyHefridayartbeat.png'
 
 # Worked
 # source: 'kivy-logo-black-64.png'
@@ -35,8 +35,128 @@ built = Builder.load_string("""
             allow_stretch: True
             center_x: self.parent.center_x
             center_y: self.parent.center_y            
-    Label:
-        text: "A label"
+    #Label:
+    #    text: "A label"
+    Button:
+        text: "B2"
+        id: B2
+        on_press: root.callback(self, "B2")
+        Image:
+            source: 'daleemoore.mooreworks.org/JoulesSB/BabySister.png'        
+            y: self.parent.y + self.parent.height - 250
+            x: self.parent.x
+            size: 250, 250
+            allow_stretch: True
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y            
+    Button:
+        text: "B3"
+        id: B3
+        on_press: root.callback(self, "B3")
+        Image:
+            source: 'daleemoore.mooreworks.org/JoulesSB/buzzlightyearinfinitybeyond.png'        
+            y: self.parent.y + self.parent.height - 250
+            x: self.parent.x
+            size: 250, 250
+            allow_stretch: True
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y            
+    Button:
+        text: "B4"
+        id: B4
+        on_press: root.callback(self, "B4")
+        Image:
+            source: 'daleemoore.mooreworks.org/JoulesSB/BabyHeartbeat.png'        
+            y: self.parent.y + self.parent.height - 250
+            x: self.parent.x
+            size: 250, 250
+            allow_stretch: True
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y            
+    Button:
+        text: "B5"
+        id: B5
+        on_press: root.callback(self, "B5")
+        Image:
+            source: 'daleemoore.mooreworks.org/JoulesSB/fossilMuseum.png'        
+            y: self.parent.y + self.parent.height - 250
+            x: self.parent.x
+            size: 250, 250
+            allow_stretch: True
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y            
+    Button:
+        text: "B6"
+        id: B6
+        on_press: root.callback(self, "B6")
+        Image:
+            source: 'daleemoore.mooreworks.org/JoulesSB/helicopter.png'        
+            y: self.parent.y + self.parent.height - 250
+            x: self.parent.x
+            size: 250, 250
+            allow_stretch: True
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y            
+    Button:
+        text: "B7"
+        id: B7
+        on_press: root.callback(self, "B7")
+        Image:
+            source: 'daleemoore.mooreworks.org/JoulesSB/JoulesLaugh.png'        
+            y: self.parent.y + self.parent.height - 250
+            x: self.parent.x
+            size: 250, 250
+            allow_stretch: True
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y            
+    Button:
+        text: "B8"
+        id: B8
+        on_press: root.callback(self, "B8")
+        Image:
+            source: 'daleemoore.mooreworks.org/JoulesSB/mytubeGood.png'        
+            y: self.parent.y + self.parent.height - 250
+            x: self.parent.x
+            size: 250, 250
+            allow_stretch: True
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y            
+    Button:
+        text: "B9"
+        id: B9
+        on_press: root.callback(self, "B9")
+        Image:
+            source: 'daleemoore.mooreworks.org/JoulesSB/Share.png'        
+            y: self.parent.y + self.parent.height - 250
+            x: self.parent.x
+            size: 250, 250
+            allow_stretch: True
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y            
+    Button:
+        text: "B10"
+        id: B10
+        on_press: root.callback(self, "B10")
+        Image:
+            source: 'daleemoore.mooreworks.org/JoulesSB/TeslaBottle.png'        
+            y: self.parent.y + self.parent.height - 250
+            x: self.parent.x
+            size: 250, 250
+            allow_stretch: True
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y            
+    Button:
+        text: "B11"
+        id: B11
+        on_press: root.callback(self, "B11")
+        Image:
+            source: 'daleemoore.mooreworks.org/JoulesSB/TeslaForggie2.png'        
+            y: self.parent.y + self.parent.height - 250
+            x: self.parent.x
+            size: 250, 250
+            allow_stretch: True
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y            
 """)
 
 class ButtonsApp(App, BoxLayout):
@@ -47,16 +167,44 @@ class ButtonsApp(App, BoxLayout):
         print('The button %s value.' % str(value))
         #print('The button <%s> is being pressed' % instance.text)
         print ('start sound')
-        sound = SoundLoader.load('daleemoore.mooreworks.org/JoulesSB/friday.mp3')
+        if value == "B1":
+            sound = SoundLoader.load('daleemoore.mooreworks.org/JoulesSB/friday.mp3')
+        if value == "B2":
+            sound = SoundLoader.load('daleemoore.mooreworks.org/JoulesSB/BabySister.mp3')
+        if value == "B3":
+            sound = SoundLoader.load('daleemoore.mooreworks.org/JoulesSB/buzzlightyearinfinitybeyond.mp3')
+        if value == "B4":
+            sound = SoundLoader.load('daleemoore.mooreworks.org/JoulesSB/BabyHeartbeat.mp3')
+        if value == "B5":
+            sound = SoundLoader.load('daleemoore.mooreworks.org/JoulesSB/fossilMuseum.mp3')
+        if value == "B6":
+            sound = SoundLoader.load('daleemoore.mooreworks.org/JoulesSB/helicopter.mp3')
+        if value == "B7":
+            sound = SoundLoader.load('daleemoore.mooreworks.org/JoulesSB/JoulesLaugh.mp3')
+        if value == "B8":
+            sound = SoundLoader.load('daleemoore.mooreworks.org/JoulesSB/mytubeGood.mp3')
+        if value == "B9":
+            sound = SoundLoader.load('daleemoore.mooreworks.org/JoulesSB/Share.mp3')
+        if value == "B10":
+            sound = SoundLoader.load('daleemoore.mooreworks.org/JoulesSB/TeslaBottle.mp3')
+        if value == "B11":
+            sound = SoundLoader.load('daleemoore.mooreworks.org/JoulesSB/TeslaFroggie2.mp3')
+            #sound = SoundLoader.load('daleemoore.mooreworks.org/JoulesSB/BabyHeartbeat.mp3')
         if sound:
-            print("Sound found at %s" % sound.source)
+            print("Sound found at %s" % sound.source)        #print("Button " + str(self.ids["B20"].text))
+
             print("Sound is %.3f seconds" % sound.length)
-            sound.play()
-            # wait until the sound is done playing to free up the interface
-            # Well it doesn't really freeze, you can push the same button and buffer up several plays.
-            print('start waiting for sound to finish')
-            time.sleep(sound.length)
-            print ('sound done.')
+            try:
+                sound.play()
+                print('start waiting for sound to finish')
+                # TODO; change button appearance to depressed, maybe just .text = name.
+                # wait until the sound is done playing to free up the interface
+                # Well it doesn't really freeze, you can push the same button and buffer up several plays.
+                time.sleep(sound.length)
+                print('sound done.')
+                # TODO; change button appearance to pix.
+            except:
+                print("I couldn't play the sound assiciated with %s" % str(value))
         else:
             print("No sound.")
         #sound = SoundLoader.load('beep.wav')
@@ -71,15 +219,13 @@ class ButtonsApp(App, BoxLayout):
         print("ButtonsApp.build()")
         print("Button " + str(self.ids["B1"].text))
 
-        # TODO; B2 and B3 don't press?
-        self.add_widget(Button(text="B2",id="B2"))
-        self.bind(on_press=lambda a: self.callback(self, "B2"))
-        # TODO; add_widget did not put B2 in ids.
-        # KeyError: 'B2'
-        #print("Button " + str(self.ids["B2"].text))
-        self.add_widget(Button(text="B3",id="B3"))
-        self.bind(on_press=lambda a: self.callback(self, "B3"))
-        #print("Button " + str(self.ids["B3"].text))
+        # TODO; B20 and B30 don't press?
+        self.add_widget(Button(text="B20",id="B20"))
+        self.bind(on_press=lambda a: self.callback(self, "B20"))
+        # TODO; add_widget did not put B20 in ids.
+        # KeyError: 'B20'
+        #self.add_widget(Button(text="B30",id="B30"))
+        #self.bind(on_press=lambda a: self.callback(self, "B30"))
         return self
 
 
