@@ -8,3 +8,6 @@ kivy
 # import Tkinter    # Reddit1.py
 # import winsound   # Reddit1.py
 # apt install python-tk
+
+# Sound needed
+# root@JenOvo:/home/dalem# apt install gstreamer1.0-fluendo-mp3

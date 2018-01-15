@@ -6,6 +6,7 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.lang import Builder
 from kivy.uix.button import Button
 from kivy.core.audio import SoundLoader
+import sys
 import time
 
 # Worked
@@ -31,12 +32,26 @@ built = Builder.load_string("""
             #source: 'kivy.png'
             y: self.parent.y + self.parent.height - 250
             x: self.parent.x
-            size: 250, 250
+            size: dp(250), dp(250)
             allow_stretch: True
             center_x: self.parent.center_x
             center_y: self.parent.center_y            
-    #Label:
-    #    text: "A label"
+    Label:
+        text: "A label"
+    Label:
+        text: "B label"
+    Label:
+        text: "C label"
+    Label:
+        text: "D label"
+    Label:
+        text: "E label"
+    Label:
+        text: "F label"
+    Label:
+        text: "G label"
+    Label:
+        text: "H label"
     Button:
         text: "B2"
         id: B2
@@ -49,6 +64,22 @@ built = Builder.load_string("""
             allow_stretch: True
             center_x: self.parent.center_x
             center_y: self.parent.center_y            
+    Label:
+        text: "A label"
+    Label:
+        text: "B label"
+    Label:
+        text: "C label"
+    Label:
+        text: "D label"
+    Label:
+        text: "E label"
+    Label:
+        text: "F label"
+    Label:
+        text: "G label"
+    Label:
+        text: "H label"
     Button:
         text: "B3"
         id: B3
@@ -204,7 +235,7 @@ class ButtonsApp(App, BoxLayout):
                 print('sound done.')
                 # TODO; change button appearance to pix.
             except:
-                print("I couldn't play the sound assiciated with %s" % str(value))
+                print("I couldn't play the sound assiciated with %s because %s" % (str(value), sys.exc_info()[0]))
         else:
             print("No sound.")
         #sound = SoundLoader.load('beep.wav')
