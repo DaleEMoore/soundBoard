@@ -1,8 +1,10 @@
 # python2
 # Reddit1.py requires python2
+# winsound is required for the current version of Reddit1.py, also so python2 is debatable!
 
-cython
-kivy
+
+cython # pip2 install cython
+kivy # apt install python-kivy
 
 # Tkinter
 # import Tkinter    # Reddit1.py
