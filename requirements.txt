@@ -13,3 +13,4 @@ kivy # apt install python-kivy
 
 # Sound needed
 # root@JenOvo:/home/dalem# apt install gstreamer1.0-fluendo-mp3
+
