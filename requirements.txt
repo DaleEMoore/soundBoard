@@ -2,7 +2,7 @@
 # Reddit1.py requires python2
 
 cython
-kivy
+kivy # apt install python-kivy
 
 # Tkinter
 # import Tkinter    # Reddit1.py
