@@ -1,5 +1,7 @@
 #!/usr/bin/env python2
 
+# this works on WINDOWS ONLY because of wINSOUND used here.
+
 # From: https://www.reddit.com/r/beginnerprojects/comments/4mwwxx/soundboard_x_post_rlearnpython/
 # From: https://pastebin.com/TUm3L2PX
 
