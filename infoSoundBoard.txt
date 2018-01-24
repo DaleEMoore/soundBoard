@@ -7,6 +7,13 @@ A sound board inspired by JoulesSB. This one's kivy using and runs on Linux and 
 TODO
 This copy of soundBoard runs fine at PC TouchMe (for Jack George) as dalem.
     I'm going to update the project and merge these comments and see what happens then!
+    This was merged and pushed and updated local and it still runs fine so the failure
+    is at DaleHome on QnD as dalem. I'll bet the .xml files related are bad. Find the
+    JetBrains path/modules/packages figure out-er and compare
+        DaleHome on QnD as dalem
+        with
+        MW on TouchMe as dalem
+        then figure out what fixes DaleHome.
 
 I'm having problems getting this to run on QnD now because kivy is no longer present.
 
