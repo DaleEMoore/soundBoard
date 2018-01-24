@@ -8,6 +8,35 @@ TODO
 This copy of soundBoard runs fine at PC TouchMe (for Jack George) as dalem.
     I'm going to update the project and merge these comments and see what happens then!
 
+I'm having problems getting this to run on QnD now because kivy is no longer present.
+
+    (soundBoard) dalem@QnD:~/PycharmProjects/soundBoard$ pip install kivy >~/Desktop/kf.1 2>&1
+
+    I don't know how kivy went away, but; it's gone.
+    And all my attempts at installation fail on some cython thing.
+
+    kivy installation didn't fix it.
+    Comparing other projects that work like mwScripts doesn't disclose what's missing.
+    How do I fix this?
+
+    It works fine from outside PyCharm.
+        So it's the pythonpath or some such that's buggering it up.
+        Can I write something, or find something that will give that info to me?
+        Did I get that already from JetBrains support?
+            I've had something like this problem before.
+
+    Look at JetBrains support emails and find the thing that tells me PythonPath and other
+    library/package/module references.
+        Compare outside PyCharm which works with
+        inside PyCharm which fails.
+        And perhaps that email thread will have the solution or a hint.
+
+
+Notice in mwScripts, Python Console, help("modules") causes kivy to launch.
+    I think that's a bug that should be submitted to kivy.
+    Or perhaps I should submit a pull request? in github against the project?
+    What would be the code that would fix the problem?
+        Would that be an "if __name__ == '__main__':" clause?
 
 Add sound
     Use button1.py since the image works there.
@@ -48,3 +77,88 @@ Find a Python sound board program that uses kivy.
     Google kivy soundboard; lots of GitHub projects.
     Am using some code I found that uses "class ImageButton".
 
+
+Monday 22 January 2018 21:05 PM CST
+I'm having problems getting this to run on QnD now because kivy is no longer present.
+
+    (soundBoard) dalem@QnD:~/PycharmProjects/soundBoard$ pip install kivy >~/Desktop/kf.1 2>&1
+
+    I don't know how kivy went away, but; it's gone.
+    And all my attempts at installation fail on some cython thing.
+
+    I should go back to the beginning and use the kivy installation documentation here
+        Use the terminal inside PyCharm because I think the python environment is set properly.
+
+        https://kivy.org/docs/installation/installation.html
+        https://kivy.org/docs/installation/installation-linux.html
+
+        sudo add-apt-repository ppa:kivy-team/kivy
+        I had to clean up some apt problems with
+        root@QnD:~# sudo rm /var/lib/apt/lists/lock /var/cache/apt/archives/lock /var/lib/dpkg/lock /var/cache/debconf/config.dat /var/cache/debconf/passwords.dat /var/cache/debconf/templates.dat
+        root@QnD:~# apt-get update && apt-get -y dist-upgrade && if [ -e /var/run/reboot-required ]; then echo "REBOOT required"; else echo "Not required to reboot at `date`."; fi
+        apt install kivy
+        apt install python-kivy
+        apt install python3-kivy
+        python import kivy "importerror: no module named kivy"
+
+        Same problem here: https://stackoverflow.com/questions/39900292/no-module-named-kivy
+
+    Try other PyCharm projects and see if ANYTHING works.
+        mwScripts/training/soloLearn.py Settings (python3, ""#!/usr/bin/env python2") WORKS!
+    Change soundBoard/main.py to "#!/usr/bin/env python2" Still fails!
+
+    from Python Console
+    import sys
+    print(sys.path)
+
+    soundBoard (fails)
+    ['/home/dalem/Downloads/pycharm-community-2017.2.2/helpers/pydev', '/home/dalem/Downloads/pycharm-community-2017.2.2/helpers/pydev', '/home/dalem/.virtualenvs/soundBoard/lib/python2.7', '/home/dalem/.virtualenvs/soundBoard/lib/python2.7/plat-x86_64-linux-gnu', '/home/dalem/.virtualenvs/soundBoard/lib/python2.7/lib-tk', '/home/dalem/.virtualenvs/soundBoard/lib/python2.7/lib-old', '/home/dalem/.virtualenvs/soundBoard/lib/python2.7/lib-dynload', '/usr/lib/python2.7', '/usr/lib/python2.7/plat-x86_64-linux-gnu', '/usr/lib/python2.7/lib-tk', '/home/dalem/.virtualenvs/soundBoard/local/lib/python2.7/site-packages', '/home/dalem/.virtualenvs/soundBoard/lib/python2.7/site-packages', '/home/dalem/PycharmProjects/soundBoard']
+    for pt in sys.path:
+        print(pt)
+    /home/dalem/Downloads/pycharm-community-2017.2.2/helpers/pydev
+    /home/dalem/Downloads/pycharm-community-2017.2.2/helpers/pydev
+    /home/dalem/.virtualenvs/soundBoard/lib/python2.7
+    /home/dalem/.virtualenvs/soundBoard/lib/python2.7/plat-x86_64-linux-gnu
+    /home/dalem/.virtualenvs/soundBoard/lib/python2.7/lib-tk
+    /home/dalem/.virtualenvs/soundBoard/lib/python2.7/lib-old
+    /home/dalem/.virtualenvs/soundBoard/lib/python2.7/lib-dynload
+    /usr/lib/python2.7
+    /usr/lib/python2.7/plat-x86_64-linux-gnu
+    /usr/lib/python2.7/lib-tk
+    /home/dalem/.virtualenvs/soundBoard/local/lib/python2.7/site-packages
+    /home/dalem/.virtualenvs/soundBoard/lib/python2.7/site-packages
+    /home/dalem/PycharmProjects/soundBoard
+
+    mwScripts (works)
+    ['/home/dalem/Downloads/pycharm-community-2017.2.2/helpers/pydev', '/home/dalem/Downloads/pycharm-community-2017.2.2/helpers/pydev', '/usr/lib/python35.zip', '/usr/lib/python3.5', '/usr/lib/python3.5/plat-x86_64-linux-gnu', '/usr/lib/python3.5/lib-dynload', '/usr/local/lib/python3.5/dist-packages', '/usr/lib/python3/dist-packages']
+
+    /home/dalem/Downloads/pycharm-community-2017.2.2/helpers/pydev
+    /home/dalem/Downloads/pycharm-community-2017.2.2/helpers/pydev
+    /usr/lib/python35.zip
+    /usr/lib/python3.5
+    /usr/lib/python3.5/plat-x86_64-linux-gnu
+    /usr/lib/python3.5/lib-dynload
+    /usr/local/lib/python3.5/dist-packages
+    /usr/lib/python3/dist-packages
+
+    import sys; print(sys.path);
+    for pt in sys.path: print(pt);
+
+    Interesting that mwScripts is set to python2, but has python3 in the path.
+
+    from Terminal in soundBoard
+    import sys; print(sys.path);
+    ['', '/home/dalem/.virtualenvs/soundBoard/lib/python2.7', '/home/dalem/.virtualenvs/soundBoard/lib/python2.7/plat-x86_64-linux-gnu', '/home/dalem/.virtualenvs/soundBoard/lib/python2.7/lib-tk', '/home/dalem/.virtualenvs/soundBoard/lib/python2.7/lib-old', '/home/dalem/.virtualenvs/soundBoard/lib/python2.7/lib-dynload', '/usr/lib/python2.7', '/usr/lib/python2.7/plat-x86_64-linux-gnu', '/usr/lib/python2.7/lib-tk', '/home/dalem/.virtualenvs/soundBoard/local/lib/python2.7/site-packages', '/home/dalem/.virtualenvs/soundBoard/lib/python2.7/site-packages']
+    for pt in sys.path:
+        print(pt);
+
+    /home/dalem/.virtualenvs/soundBoard/lib/python2.7
+    /home/dalem/.virtualenvs/soundBoard/lib/python2.7/plat-x86_64-linux-gnu
+    /home/dalem/.virtualenvs/soundBoard/lib/python2.7/lib-tk
+    /home/dalem/.virtualenvs/soundBoard/lib/python2.7/lib-old
+    /home/dalem/.virtualenvs/soundBoard/lib/python2.7/lib-dynload
+    /usr/lib/python2.7
+    /usr/lib/python2.7/plat-x86_64-linux-gnu
+    /usr/lib/python2.7/lib-tk
+    /home/dalem/.virtualenvs/soundBoard/local/lib/python2.7/site-packages
+    /home/dalem/.virtualenvs/soundBoard/lib/python2.7/site-packages
