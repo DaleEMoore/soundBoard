@@ -5,6 +5,10 @@ A sound board inspired by JoulesSB. This one's kivy using and runs on Linux and 
 
 
 TODO
+This copy of soundBoard runs fine at PC TouchMe (for Jack George) as dalem.
+    I'm going to update the project and merge these comments and see what happens then!
+
+
 Add sound
     Use button1.py since the image works there.
     Wire up sound and make it work.
