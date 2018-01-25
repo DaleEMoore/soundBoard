@@ -5,51 +5,6 @@ A sound board inspired by JoulesSB. This one's kivy using and runs on Linux and 
 
 
 TODO
-This copy of soundBoard runs fine at PC TouchMe (for Jack George) as dalem.
-    I'm going to update the project and merge these comments and see what happens then!
-    This was merged and pushed and updated local and it still runs fine so the failure
-    is at DaleHome on QnD as dalem. I'll bet the .xml files related are bad. Find the
-    JetBrains path/modules/packages figure out-er and compare
-        DaleHome on QnD as dalem
-        with
-        MW on TouchMe as dalem
-        then figure out what fixes DaleHome.
-
-        I think it's check_python_interpreter.py.
-            dalem@QnD:~/PycharmProjects$ du -a | grep check_python_
-            ./kivy/examples/widgets/recycleview/check_python_interpreter.py
-            ./andiKivyExamples/examples/widgets/recycleview/check_python_interpreter.py
-
-        Try this:
-        In PyCharm, Go to Run| Edit Configurations| basic_data and unselect the checkbox
-        "Add content roots to PYTHONPATH", apply
-        changes and launch this run configuration
-
-
-I'm having problems getting this to run on QnD now because kivy is no longer present.
-
-    (soundBoard) dalem@QnD:~/PycharmProjects/soundBoard$ pip install kivy >~/Desktop/kf.1 2>&1
-
-    I don't know how kivy went away, but; it's gone.
-    And all my attempts at installation fail on some cython thing.
-
-    kivy installation didn't fix it.
-    Comparing other projects that work like mwScripts doesn't disclose what's missing.
-    How do I fix this?
-
-    It works fine from outside PyCharm.
-        So it's the pythonpath or some such that's buggering it up.
-        Can I write something, or find something that will give that info to me?
-        Did I get that already from JetBrains support?
-            I've had something like this problem before.
-
-    Look at JetBrains support emails and find the thing that tells me PythonPath and other
-    library/package/module references.
-        Compare outside PyCharm which works with
-        inside PyCharm which fails.
-        And perhaps that email thread will have the solution or a hint.
-
-
 Notice in mwScripts, Python Console, help("modules") causes kivy to launch.
     I think that's a bug that should be submitted to kivy.
     Or perhaps I should submit a pull request? in github against the project?
@@ -295,3 +250,59 @@ check_python_interpreter_QnD.log:
               '/home/dalem/.virtualenvs/soundBoard/lib/python2.7/site-packages'],
  'sys.prefix': '/home/dalem/.virtualenvs/soundBoard',
  'sys.version_info': sys.version_info(major=2, minor=7, micro=12, releaselevel='final', serial=0)}
+
+
+Thursday 25 January 2018 3:15 PM CST
+This copy of soundBoard runs fine at PC TouchMe (for Jack George) as dalem.
+    I'm going to update the project and merge these comments and see what happens then!
+    This was merged and pushed and updated local and it still runs fine so the failure
+    is at DaleHome on QnD as dalem. I'll bet the .xml files related are bad. Find the
+    JetBrains path/modules/packages figure out-er and compare
+        DaleHome on QnD as dalem
+        with
+        MW on TouchMe as dalem
+        then figure out what fixes DaleHome.
+
+        I think it's check_python_interpreter.py.
+            dalem@QnD:~/PycharmProjects$ du -a | grep check_python_
+            ./kivy/examples/widgets/recycleview/check_python_interpreter.py
+            ./andiKivyExamples/examples/widgets/recycleview/check_python_interpreter.py
+
+        Try this:
+        In PyCharm, Go to Run| Edit Configurations| basic_data and unselect the checkbox
+        "Add content roots to PYTHONPATH", apply
+        changes and launch this run configuration
+
+        mv soundBoard soundBoard-a
+        git clone soundBoard
+        it works perfectly!
+
+
+I'm having problems getting this to run on QnD now because kivy is no longer present.
+
+    (soundBoard) dalem@QnD:~/PycharmProjects/soundBoard$ pip install kivy >~/Desktop/kf.1 2>&1
+
+    I don't know how kivy went away, but; it's gone.
+    And all my attempts at installation fail on some cython thing.
+
+    kivy installation didn't fix it.
+    Comparing other projects that work like mwScripts doesn't disclose what's missing.
+    How do I fix this?
+
+    It works fine from outside PyCharm.
+        So it's the pythonpath or some such that's buggering it up.
+        Can I write something, or find something that will give that info to me?
+        Did I get that already from JetBrains support?
+            I've had something like this problem before.
+
+    Look at JetBrains support emails and find the thing that tells me PythonPath and other
+    library/package/module references.
+        Compare outside PyCharm which works with
+        inside PyCharm which fails.
+        And perhaps that email thread will have the solution or a hint.
+
+    mv soundBoard soundBoard-a
+    git clone soundBoard
+    it works perfectly!
+
+
