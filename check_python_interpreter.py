@@ -5,7 +5,7 @@
 # but, examples run from the command line work fine.
 
 # From https://gist.github.com/vlasovskikh/968240f877117cb6c882
-
+print("Starting %s" % __file__)
 import sys
 import os
 import pkg_resources
@@ -21,3 +21,4 @@ pprint({
     'PATH': os.environ['PATH'].split(os.pathsep),
     'HOSTNAME': socket.gethostname(),
 })
+print("Ending %s" % __file__)
