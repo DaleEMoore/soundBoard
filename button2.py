@@ -1,9 +1,13 @@
 #!/usr/bin/env python2
+# TODO; minimize this so it's easier to change/test
+# button1 couldn't go to GridView... really messed up!
+
 # From: https://stackoverflow.com/questions/17392202/passing-image-object-as-a-button-background-in-kivy
 
 # TODO; add sound volume control.
 # TODO; add sound pause and play control.
 # TODO; tie the image closer to the sound_file in the source code. Right now they are very distant.
+# TODO; on selecting an image/sound_file screen size display the image and display the sound controls.
 
 
 print("The start of everything.")

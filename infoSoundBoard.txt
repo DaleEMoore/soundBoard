@@ -5,11 +5,9 @@ A sound board inspired by JoulesSB. This one's kivy using and runs on Linux and 
 
 
 TODO
-Notice in mwScripts, Python Console, help("modules") causes kivy to launch.
-    I think that's a bug that should be submitted to kivy.
-    Or perhaps I should submit a pull request? in github against the project?
-    What would be the code that would fix the problem?
-        Would that be an "if __name__ == '__main__':" clause?
+Get ImageButton working to my satisfaction.
+    Build string first then "built = Builder.load_string(toBuild)".
+
 
 Add sound
     Use button1.py since the image works there.
@@ -22,8 +20,12 @@ Add sound
     sound.play()
 
 
-Get ImageButton working to my satisfaction.
-    Build string first then "built = Builder.load_string(toBuild)".
+Notice in mwScripts, Python Console, help("modules") causes kivy to launch.
+    I think that's a bug that should be submitted to kivy.
+    Or perhaps I should submit a pull request? in github against the project?
+    What would be the code that would fix the problem?
+        Would that be an "if __name__ == '__main__':" clause?
+
 
 Evaluate https://github.com/yomguy/PiPlayer
     PiPlayer : audio sample player for the Rpi
